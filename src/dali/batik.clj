@@ -18,8 +18,8 @@
            [org.apache.batik.gvt.renderer ConcreteImageRendererFactory]
            [org.apache.batik.transcoder TranscoderInput TranscoderOutput SVGAbstractTranscoder]
            [org.apache.batik.ext.awt.image.spi ImageTagRegistry]
-           [org.apache.batik.ext.awt.image.codec.png PNGRegistryEntry]
-           [org.apache.batik.ext.awt.image.codec.tiff TIFFRegistryEntry]
+           [org.apache.batik.ext.awt.image.codec.imageio ImageIOPNGRegistryEntry]
+           [org.apache.batik.ext.awt.image.codec.imageio ImageIOTIFFRegistryEntry]
            [org.apache.batik.transcoder.image PNGTranscoder]
            [dali.svg_context SVGContext]))
 
@@ -35,8 +35,8 @@
   (when-not @imageio-workaround-applied?
     (let [registry (ImageTagRegistry/getRegistry)]
       (doto registry
-        (.register (new PNGRegistryEntry))
-        (.register (new TIFFRegistryEntry))))
+        (.register (new ImageIOPNGRegistryEntry))
+        (.register (new ImageIOTIFFRegistryEntry))))
     (reset! imageio-workaround-applied? true)))
 
 (defn- to-rect [rect]
