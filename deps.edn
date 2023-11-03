@@ -4,10 +4,10 @@
            org.clojure/data.codec                     {:mvn/version "0.1.0"}
            prismatic/schema                           {:mvn/version "1.0.3"}
            xerces/xerces                              {:mvn/version "2.4.0"}
-           org.apache.xmlgraphics/batik-transcoder    {:mvn/version "1.8"
+           org.apache.xmlgraphics/batik-transcoder    {:mvn/version "1.17"
                                                        :exclusions [xerces/xercesImpl batik/batik-script]}
-           org.apache.xmlgraphics/batik-codec         {:mvn/version "1.8"}
-           org.apache.xmlgraphics/batik-anim          {:mvn/version "1.8"}
+           org.apache.xmlgraphics/batik-codec         {:mvn/version "1.17"}
+           org.apache.xmlgraphics/batik-anim          {:mvn/version "1.17"}
            org.apache.xmlgraphics/xmlgraphics-commons {:mvn/version "2.0.1"}
            retrograde/retrograde                      {:mvn/version "0.10"}}
  :aliases {:dev {:extra-paths ["test" "examples/src" "dev"]
